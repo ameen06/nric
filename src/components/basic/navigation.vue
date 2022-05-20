@@ -2,7 +2,7 @@
     <div x-data="{show: false}" x-on:click.away="show = false">
         
         <!-- Header -->
-        <header class="w-full px-[8%] py-2">
+        <header class="w-full px-[8%] py-2 shadow-md">
             <div class="flex justify-between items-center">
 
                 <div class="">
@@ -12,22 +12,25 @@
                 <!-- Navigation -->
                 <nav class="hidden md:block">
                     <ul class="flex gap-x-4">
-                        <li class="lg:text-lg text-gray-500 font-semibold hover:text-gray-700 "
-                        :class="$route.name === 'Home' ? 'text-green-500' : ''">
+                        <li class="lg:text-lg font-semibold hover:text-gray-700 "
+                        :class="$route.name === 'Home' ? 'text-green-500' : 'text-gray-500'">
                             <a href="/">Home</a>
                         </li>
-                         <li class="lgtext-lg text-gray-500 font-semibold hover:text-gray-700 focus:text-green-500"
-                         :class="$route.name === 'About' ? 'text-green-500' : ''">
+                         <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                         :class="$route.name === 'About' ? 'text-green-500' : 'text-gray-500'">
                             <a href="/about">About</a>
                         </li>
-                         <li class="lgtext-lg text-gray-500 font-semibold hover:text-gray-700 focus:text-green-500">
-                            <a href="/">Academics</a>
+                         <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                         :class="$route.name === 'Academics' ? 'text-green-500' : 'text-gray-500'">
+                            <a href="/academics">Academics</a>
                         </li>
-                         <li class="lgtext-lg text-gray-500 font-semibold hover:text-gray-700 focus:text-green-500">
-                            <a href="/">Admission</a>
+                         <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                         :class="$route.name === '' ? 'text-green-500' : 'text-gray-500'">
+                            <a href="/admission">Admission</a>
                         </li>
-                         <li class="lgtext-lg text-gray-500 font-semibold hover:text-gray-700 focus:text-green-500" >
-                            <a href="/">Trust</a>
+                         <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                         :class="$route.name === '' ? 'text-green-500' : 'text-gray-500'">
+                            <a href="/trust">Trust</a>
                         </li>
                     </ul>
                 </nav>
@@ -38,7 +41,7 @@
                     </div>
         
                     <a href="#" class="hidden md:block">
-                        <button class="px-4 py-2 rounded-full bg-gray-800 text-white">Donate</button>
+                        <button class="px-4 py-2 rounded-full bg-green-600 hover:bg-green-800 text-white">Donate</button>
                     </a>
                     <button class="block md:hidden focus:text-green-500" x-on:click="show = !show" type="button">
                         <i class='bx bx-menu text-3xl'></i>

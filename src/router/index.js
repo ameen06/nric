@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Academics from '../views/Academics.vue'
+import PathNotFound from '../views/PathNotFound.vue'
 
 const routes = [
   {
@@ -16,7 +18,15 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/About.vue')
     }
-  }
+  },
+  {
+    path: '/academics',
+    name: 'Academics',
+    component: Academics
+  },
+  { 
+    path: '/:pathMatch(.*)*', component: PathNotFound 
+  },
 ]
 
 const router = createRouter({
