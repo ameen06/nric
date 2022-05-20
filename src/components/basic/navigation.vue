@@ -57,10 +57,26 @@
                 <i class='bx bx-x text-3xl'></i>
             </button>
             <ul class="flex flex-col gap-x-4 my-10">
-                <li class="text-lg text-gray-400 font-semibold">Service</li>
-                <li class="text-lg text-gray-400 font-semibold">About</li>
-                <li class="text-lg text-gray-400 font-semibold">Blog</li>
-                <li class="text-lg text-gray-400 font-semibold">Company</li>
+                <li class="lg:text-lg font-semibold hover:text-gray-700 "
+                :class="$route.name === 'Home' ? 'text-green-500' : 'text-gray-500'">
+                    <a href="/">Home</a>
+                </li>
+                    <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                    :class="$route.name === 'About' ? 'text-green-500' : 'text-gray-500'">
+                    <a href="/about">About</a>
+                </li>
+                    <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                    :class="$route.name === 'Academics' ? 'text-green-500' : 'text-gray-500'">
+                    <a href="/academics">Academics</a>
+                </li>
+                    <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                    :class="$route.name === '' ? 'text-green-500' : 'text-gray-500'">
+                    <a href="/admission">Admission</a>
+                </li>
+                    <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
+                    :class="$route.name === '' ? 'text-green-500' : 'text-gray-500'">
+                    <a href="/trust">Trust</a>
+                </li>
             </ul>
 
             <a href="#" class="">
