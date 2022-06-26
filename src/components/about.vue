@@ -2,7 +2,6 @@
   <section class="w-full py-[5%] px-[8%] flex justify-between items-center flex-col lg:flex-row bg-cover bg-no-repeat bg-center"
     style="background-image: url(' {{ asset('images/about-bg.webp') }} ');">
 
-
         <div class="lg:w-[45%]">
             <h1 class="text-2xl md:text-6xl md:leading-normal font-medium max-w-xl">We rise the <span class="text-green-500">spiritual leaders</span> of all time</h1>
 

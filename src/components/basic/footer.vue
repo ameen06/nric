@@ -35,8 +35,6 @@
                     <a href="/admission" class="hover:text-blue-600">Admission</a>
                     <a href="#" class="hover:text-blue-600 mb-6">E-brochure</a>
 
-                    <x-donatebtn />
-
                 </div>
 
                 <div class="w-full lg:w-1/3">
