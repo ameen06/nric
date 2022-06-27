@@ -20,7 +20,7 @@
   <Count />
 
   <div >
-    <article class="w-full auto bg-white shadow-lg flex flex-col gap-4" v-for="item in list" :key="item.id">
+    <article class="hidden w-full auto bg-white shadow-lg flex-col gap-4" v-for="item in list" :key="item.id">
     <figure class="w-full h-auto">
         <a href="#">
             <img :src="item.avatar"
