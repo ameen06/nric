@@ -118,7 +118,7 @@ export default {
                 message:this.messages.message
             });
             if(result){
-                this.$router.push('Contact')
+                this.$router.push('/contact')
             }
         }
     }
