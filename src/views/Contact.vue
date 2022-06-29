@@ -42,7 +42,7 @@
                     Leave a message through this form and we will get in touch with you as soon as possible.
                 </p>
 
-                <form class="flex flex-col">
+                <form class="flex flex-col" @submit.stop.prevent="submit">
 
                     <input type="text" placeholder="Your Name..." required v-model="messages.name"
                     class="w-full bg-gray-100 px-2 py-1 border-b border-green-400 text-gray-800 outline-none font-light">
@@ -62,7 +62,7 @@
                         <span class="text-sm text-red-600">{{ error.$message }}</span>
                     </span>
                     
-                    <button type="button" v-on:click="submitMessage" class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3">Send Message</button>
+                    <button type="submit" v-on:click="submitMessage" class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3">Send Message</button>
                 
                 </form>
 
@@ -117,9 +117,7 @@ export default {
                 email:this.messages.email,
                 message:this.messages.message
             });
-        }
-        if(result){
-                this.$router.push('/contact');
+            await this.$router.push('/contact');
         }
     }
   }
