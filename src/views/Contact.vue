@@ -117,9 +117,9 @@ export default {
                 email:this.messages.email,
                 message:this.messages.message
             });
-            if(result){
-                this.$router.push('/contact')
-            }
+        }
+        if(result){
+                this.$router.push('/contact');
         }
     }
   }
