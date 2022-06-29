@@ -116,7 +116,7 @@ export default {
                 name:this.messages.name,
                 email:this.messages.email,
                 message:this.messages.message
-            }).then(this.$router.push('/about'));
+            }).then(this.$router.push('/contact'));
         }
     }
   }
