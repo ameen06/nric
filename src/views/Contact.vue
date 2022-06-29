@@ -112,12 +112,11 @@ export default {
     async submitMessage(){
         this.v$.$validate()
         if (!this.v$.$error) {
-            const result = await axios.post('https://nric-app.herokuapp.com/api/store/contact', {
+            await axios.post('https://nric-app.herokuapp.com/api/store/contact', {
                 name:this.messages.name,
                 email:this.messages.email,
                 message:this.messages.message
-            });
-            await this.$router.push('/contact');
+            }).then(this.$router.push('/about'));
         }
     }
   }
