@@ -30,7 +30,7 @@
                     <p class="text-2xl font-bold">Useful Links</p>
 
                     <a href="/about" class="mt-3 hover:text-blue-600">About</a>
-                    <a href="#" class="hover:text-blue-600">News & Events</a>
+                    <a href="/blog" class="hover:text-blue-600">News & Events</a>
                     <a href="/contact" class="hover:text-blue-600">Contact</a>
                     <a href="/admission" class="hover:text-blue-600">Admission</a>
                     <a href="#" class="hover:text-blue-600 mb-6">E-brochure</a>

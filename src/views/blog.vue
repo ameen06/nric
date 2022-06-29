@@ -1,19 +1,7 @@
 <template>
-  <!-- Slide Show -->
-  <Splide :options="options" aria-label="My Favorite Images" class="z-0">
-      <SplideSlide v-for="slide in slides" :key="slide.id">
-          <img :src="slide.image" alt="Sample 2">
-      </SplideSlide>
-  </Splide>
-
-  <About />
-
-  <Count />
-
   <section class="w-full mt-12 py-[5%] px-[8%] text-gray-800">
-    <div class="flex justify-between">
+    <div class="">
       <h2 class="text-2xl font-bold">News & Events</h2>
-      <a href="/blog" class="text-blue-500 font-medium">View all</a>
     </div>
     <div class="mt-8 grid grid-cols-1 grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <article class="w-full auto bg-white shadow-lg flex-col gap-4" v-for="post in list" :key="post.id">
@@ -43,66 +31,21 @@
       </article>
     </div>
   </section>
-
 </template>
 
 <script>
-// Images
-import Slide1 from "@/assets/Images/slide1.webp"
-import Slide2 from "@/assets/Images/toppers.webp"
-import Slide3 from "@/assets/Images/senior.webp"
-import Slide4 from "@/assets/Images/degree.webp"
-
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import { Splide, SplideSlide } from '@splidejs/vue-splide';
-import About from "../components/about.vue"
-import Count from "../components/home/count.vue"
-import axios from "axios"
+import axios from 'axios';
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld,
-    Splide,
-    SplideSlide,
-    About,
-    Count
-  },
-
-  data(){
-    return{
-      list:[],
-      slides:[]
-    };
-  },
-  async mounted(){
-    let result = await axios.get("https://nric-app.herokuapp.com/api/latest_posts");
-    this.list = result.data;
-
-    let slide = await axios.get("https://nric-app.herokuapp.com/api/slides");
-    this.slides = slide.data;
-  },
-  
-
-  setup() {
-    const images = {
-      slide1: Slide1,
-      slide2: Slide2,
-      slide3: Slide3,
-      slide4: Slide4,
-    };
-    const options = {
-      rewind: true,
-      autoplay: true,
-      arrows: false,
-    };
-
-    return { images, options };
-  },
-
-
-  
-
+    name: 'Blog',
+    data(){
+        return{
+            list:[],
+        };
+    },
+    async mounted(){
+        let result = await axios.get("https://nric-app.herokuapp.com/api/blog_posts");
+        this.list = result.data;
+    }
 }
 </script>
