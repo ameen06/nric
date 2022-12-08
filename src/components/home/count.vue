@@ -1,6 +1,6 @@
 <template>
-    <section class="w-full py-[5%] px-[8%] text-white from-blue-600 bg-gradient-to-l bg-purple-800 text-center ">
-        <div class="grid grid-cols-2 justify-items-center content-center lg:grid-cols-4 lg:grid-rows-1">
+    <section class="w-full text-white from-blue-600 bg-gradient-to-l bg-purple-800 text-center ">
+        <div class="container mx-auto py-[5%] px-[5%] grid grid-cols-2 justify-items-center content-center lg:grid-cols-4 lg:grid-rows-1">
 
             <div class="w-24 h-24 flex flex-col items-center justify-center">
                 <div class="flex items-center justify-center">

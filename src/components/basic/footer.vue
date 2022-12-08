@@ -1,7 +1,7 @@
 <template>
     <footer class="w-full bg-white border-t-2 border-gray-200">
 
-        <div class="w-full py-6 px-[8%] ">
+        <div class="container mx-auto py-6 px-[5%]">
             <div class="flex flex-col lg:flex-row justify-around items-start gap-6">
 
                 <div class="w-full lg:w-1/3">
@@ -10,20 +10,20 @@
                     Nahjurrashad Islamic College, Chamakkala, <br>
                     Affiliated to Darul Huda Islamic University, Chemmad.
                     </p>
-                    <div class="mt-4">
-                        <a href="https://www.instagram.com/nahjurrashad/">
-                            <i class="bx bxl-instagram-alt flex-shrink-0 text-3xl text-[#284054] hover:text-green-600"></i>
+                    <div class="mt-4 flex items-center gap-2">
+                        <a href="https://www.instagram.com/nahjurrashad/" class="h-8 w-8 inline-flex items-center justify-center bg-gray-100 rounded-full">
+                            <i class="bx bxl-instagram-alt flex-shrink-0 text-xl text-[#284054] hover:text-green-600"></i>
                         </a>
-                        <a href="https://www.facebook.com/pages/category/Education/Nahjurrashad-Islamic-College-Chamakkala-714186315287076/">
-                            <i class="bx bxl-facebook-circle flex-shrink-0 text-3xl text-[#284054] hover:text-green-600"></i>
+                        <a href="https://www.facebook.com/pages/category/Education/Nahjurrashad-Islamic-College-Chamakkala-714186315287076/" class="h-8 w-8 inline-flex items-center justify-center bg-gray-100 rounded-full">
+                            <i class="bx bxl-facebook-circle text-xl text-[#284054] hover:text-green-600"></i>
                         </a>
-                        <a href="#">
-                            <i class="bx bxl-twitter flex-shrink-0 text-3xl text-[#284054] hover:text-green-600"></i>
+                        <a href="#"  class="h-8 w-8 inline-flex items-center justify-center bg-gray-100 rounded-full">
+                            <i class="bx bxl-twitter flex-shrink-0 text-xl text-[#284054] hover:text-green-600"></i>
                         </a>
-                        <a href="https://www.youtube.com/channel/UC-Lbu2rSgvr5d92BFqXWe9w">
-                            <i class="bx bxl-youtube flex-shrink-0 text-3xl text-[#284054] hover:text-green-600"></i>
+                        <a href="https://www.youtube.com/channel/UC-Lbu2rSgvr5d92BFqXWe9w" class="h-8 w-8 inline-flex items-center justify-center bg-gray-100 rounded-full">
+                            <i class="bx bxl-youtube flex-shrink-0 text-xl text-[#284054] hover:text-green-600"></i>
                         </a>
-                        </div>
+                    </div>
                 </div>
 
                 <div class="w-full lg:w-1/3 flex flex-col">
@@ -61,9 +61,9 @@
             </div>
         </div>
 
-        <div class="w-full py-6 px-[8%] border-t border-gray-100">
-            <div class="text-sm">
-                <p><span class="font-bold">&copy;</span> by Nahjurrashad <span class="font-bold">&</span> Developed with &hearts; by <span class="font-bold">Humblar</span></p>
+        <div class="w-full border-t border-gray-100">
+            <div class="container mx-auto py-6 px-[5%]">
+                <p class="text-sm"><span class="font-bold">&copy;</span> by Nahjurrashad <span class="font-bold">&</span> Developed with &hearts; by <span class="font-bold">Humblar</span></p>
             </div>
         </div>
 

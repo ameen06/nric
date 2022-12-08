@@ -42,7 +42,7 @@
                     Leave a message through this form and we will get in touch with you as soon as possible.
                 </p>
 
-                <form class="flex flex-col" @submit.stop.prevent="submit">
+                <form class="flex flex-col" @submit.prevent="submitMessage">
 
                     <input type="text" placeholder="Your Name..." required v-model="messages.name"
                     class="w-full bg-gray-100 px-2 py-1 border-b border-green-400 text-gray-800 outline-none font-light">
@@ -61,10 +61,18 @@
                     <span class="input-errors" v-for="(error, index) of v$.messages.message.$errors" :key="index">
                         <span class="text-sm text-red-600">{{ error.$message }}</span>
                     </span>
+                    <!-- v-on:click="submitMessage" -->
                     
-                    <button type="submit" v-on:click="submitMessage" class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3">Send Message</button>
-                
+                    <button type="submit"  class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3">Send Message</button>
+
+                    
                 </form>
+                
+                <template v-if="successMsg">
+                    <div class="max-w-md mt-6 p-4 bg-green-500 text-white">
+                        {{ successMsg }}
+                    </div>
+                </template>
 
             </div>
 
@@ -83,19 +91,21 @@
 import axios from "axios"
 import useValidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
+// import { router } from 'vue-router'
 
 export default {
   name: "Contact",
   components: {},
   setup () {
-    return { v$: useValidate() }
+    return { v$: useValidate(), successMsg: '' }
   },
   data(){
     return {
         messages: {
             name:'',
             email:'',
-            message:'' 
+            message:'' ,
+            
         }
     }
   },
@@ -116,7 +126,7 @@ export default {
                 name:this.messages.name,
                 email:this.messages.email,
                 message:this.messages.message
-            }).then(this.$router.push('/contact'));
+            });
         }
     }
   }

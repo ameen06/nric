@@ -10,13 +10,13 @@
 
   <Count />
 
-  <section class="w-full mt-12 py-[5%] px-[8%] text-gray-800">
+  <section v-if="blogPosts.length !== 0" class="container mx-auto py-[5%] px-[5%] text-gray-800">
     <div class="flex justify-between">
       <h2 class="text-2xl font-bold">News & Events</h2>
       <a href="/blog" class="text-blue-500 font-medium">View all</a>
     </div>
     <div class="mt-8 grid grid-cols-1 grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <article class="w-full auto bg-white shadow-lg flex-col gap-4" v-for="post in list" :key="post.id">
+      <article class="w-full auto bg-white shadow-lg flex-col gap-4" v-for="post in blogPosts" :key="post.id">
         <figure class="w-full h-auto">
             <router-link :to="'/blog_post/'+ post.id">
                 <img :src="post.image"
@@ -72,13 +72,13 @@ export default {
 
   data(){
     return{
-      list:[],
+      blogPosts:[],
       slides:[]
     };
   },
   async mounted(){
     let result = await axios.get("https://nric-app.herokuapp.com/api/latest_posts");
-    this.list = result.data;
+    this.blogPosts = result.data;
 
     let slide = await axios.get("https://nric-app.herokuapp.com/api/slides");
     this.slides = slide.data;

@@ -2,8 +2,8 @@
     <div x-data="{show: false}" x-on:click.away="show = false">
         
         <!-- Header -->
-        <header class="w-full px-[8%] py-2 shadow-md">
-            <div class="flex justify-between items-center">
+        <header class="w-full shadow-md">
+            <div class="container mx-auto px-[5%] py-2 flex justify-between items-center">
 
                 <div class="">
                     <img :src="require('@/assets/Images/nric logo.webp')" alt="" class="h-10">
@@ -29,7 +29,7 @@
                             <a href="/admission">Admission</a>
                         </li>
                          <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "
-                         :class="$route.name === 'trust' ? 'text-green-500' : 'text-gray-500'">
+                         :class="$route.name === 'Trust' ? 'text-green-500' : 'text-gray-500'">
                             <a href="/trust">Trust</a>
                         </li>
                          <li class="lg:text-lg font-semibold hover:text-gray-700 focus:text-green-500 "

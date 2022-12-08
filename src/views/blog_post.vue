@@ -26,6 +26,7 @@ export default {
     },
     async mounted(){
         let result = await axios.get('https://nric-app.herokuapp.com/api/blog_post/'+this.$route.params.slug);
+        
         this.post = result.data;
     }
 }

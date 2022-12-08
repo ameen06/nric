@@ -1,8 +1,8 @@
 <template>
-  <section class="w-full py-[5%] px-[8%] flex justify-between items-center flex-col lg:flex-row">
+  <section class="container mx-auto py-[5%] px-[5%] flex justify-between items-center flex-col lg:flex-row">
 
         <div class="lg:w-[45%]">
-            <h1 class="text-2xl md:text-6xl md:leading-normal font-medium max-w-xl">We rise the <span class="text-green-500">spiritual leaders</span> of all time</h1>
+            <h1 class="text-2xl md:text-6xl md:leading-normal font-bold max-w-xl">We rise the <span class="text-green-500">spiritual leaders</span> of all time</h1>
 
             <p class="text-md md:text-lg text-gray-500 my-4 overflow-hidden" style="text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;">
                 Nahjurrashad Islamic College is an academic juncture between Islamic and modern forms of 
