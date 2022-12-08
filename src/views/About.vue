@@ -3,7 +3,7 @@
     <h1 class="text-4xl md:text-5xl md:leading-normal font-bold">We rise the <span class="text-green-500">spiritual leaders</span> of all time</h1>
 
     <div class="w-full my-8 flex justify-between items-start flex-col lg:flex-row gap-6">
-        <p class="w-full text-md md:text-base text-gray-500">
+        <p class="w-full text-base md:text-lg text-gray-500 max-w-xl">
             Nahjurrashad Islamic College is an academic juncture between Islamic and modern forms of 
             education which follows the syllabus of Darul Huda Islamic University, Chemmad. Accordingly, 
             NRIC aims to educate and prepare capable, intellectual and spiritual Islamic scholars, who 

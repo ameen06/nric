@@ -1,16 +1,16 @@
 <template>
   
 <!-- Contact section -->
-<section class="w-full py-[6%] px-[5%]">
+<section class="container mx-auto py-[6%] px-[5%]">
 
     <div class="text-center">
 
         <h1 class="text-5xl font-bold mb-3">Contact Us</h1>
         <p class="text-lg text-gray-400 mb-14">Got anything to on your mind? reach out through this form</p>
 
-        <div class="w-full flex flex-col md:flex-row justify-center items-start gap-10 shadow-2xl p-2">
+        <div class="w-full flex flex-col md:flex-row justify-center items-start gap-10 shadow-2xl p-2 rounded-2xl">
 
-            <div class="w-full md:w-1/2 text-left p-8 bg-green-500 text-white rounded-2xl">
+            <div class="w-full md:w-1/2 text-left p-8 bg-green-500 text-white rounded-3xl">
 
                 <h2 class="text-3xl font-bold mb-4">Contact Information</h2>
                 <p class="lg:max-w-[70%] mb-10">

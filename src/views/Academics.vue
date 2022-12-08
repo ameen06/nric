@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full py-[6%] px-[5%]">
+  <section class="container mx-auto py-[6%] px-[5%]">
 
         <h1 class="text-2xl md:text-6xl font-bold mb-14 text-green-500">Hudawi Program</h1>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full py-[6%] px-[5%]">
+  <section class="container mx-auto py-[6%] px-[5%]">
 
         <h1 class="text-3xl font-bold">ADMISSION TO SECONDARY</h1>
 
