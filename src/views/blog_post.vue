@@ -1,14 +1,13 @@
 <template>
-<section class="max-w-[80%] mx-auto py-[6%] px-[5%]" >
+<section class="w-full lg:w-[80%] max-w-6xl mx-auto py-[6%] px-[5%]" >
 
-    <img :src="post.image"
-    alt="image address" class="w-full lg:w-4/6" loading="lazy">
+    <img :src="`https://ik.imagekit.io/k4cixy45r/nric/blogs/`+post.image"
+    alt="image address" class="w-full" loading="lazy">
 
     <h2 class="text-3xl font-bold text-gray-800 mt-8">{{ post.title }}</h2>
 
-    <p class="text-xl mt-4 lg:max-w-[70%]">
-        <span v-html="post.content"></span>
-    </p>
+    <div class="text-xl mt-4" v-html="post.content">
+    </div>
 
 </section>
 </template>
@@ -25,7 +24,7 @@ export default {
         };
     },
     async mounted(){
-        let result = await axios.get('https://nric-app.herokuapp.com/api/blog_post/'+this.$route.params.slug);
+        let result = await axios.get('https://admin.nahjurrashad.com/api/blog-post/'+this.$route.params.slug);
         
         this.post = result.data;
     }

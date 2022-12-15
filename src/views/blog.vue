@@ -1,13 +1,13 @@
 <template>
-  <section class="w-full mt-12 py-[5%] px-[8%] text-gray-800">
+  <section class="container mx-auto mt-12 py-[5%] px-[5%] text-gray-800">
     <div class="">
       <h2 class="text-2xl font-bold">News & Events</h2>
     </div>
     <div class="mt-8 grid grid-cols-1 grid-rows-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <article class="w-full auto bg-white shadow-lg flex-col gap-4" v-for="post in list" :key="post.id">
+      <article class="w-full auto bg-white shadow-lg flex-col gap-4" v-for="post in blogPosts" :key="post.id">
         <figure class="w-full h-auto">
             <router-link :to="'/blog_post/'+ post.id">
-                <img :src="post.image"
+                <img :src="`https://ik.imagekit.io/k4cixy45r/nric/blogs/`+post.image"
                 alt="image address" class="w-full" loading="lazy">
             </router-link>
         </figure>
@@ -40,12 +40,12 @@ export default {
     name: 'Blog',
     data(){
         return{
-            list:[],
+            blogPosts:[],
         };
     },
     async mounted(){
-        let result = await axios.get("https://nric-app.herokuapp.com/api/blog_posts");
-        this.list = result.data;
+        let result = await axios.get("https://admin.nahjurrashad.com/api/blog-posts");
+        this.blogPosts = result.data;
     }
 }
 </script>
