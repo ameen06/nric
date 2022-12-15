@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     async getSlides(){
-      await axios.get("http://localhost:8000/api/slides").then((value) => {
+      await axios.get("https://admin.nahjurrashad.com/api/slides").then((value) => {
           this.mainSlides = value.data;
       },function(error) { console.log(error) });
     },
@@ -88,7 +88,7 @@ export default {
     }
   },
   async mounted() {
-    await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+    await axios.get('https://admin.nahjurrashad.com/sanctum/csrf-cookie');
     await this.getSlides();
     await this.getBlogPosts();
   },
