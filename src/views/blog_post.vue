@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full py-[6%] px-[5%]" >
+<section class="max-w-[80%] mx-auto py-[6%] px-[5%]" >
 
     <img :src="post.image"
     alt="image address" class="w-full lg:w-4/6" loading="lazy">

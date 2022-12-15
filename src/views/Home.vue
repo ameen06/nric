@@ -1,8 +1,8 @@
 <template>
   <!-- Slide Show -->
-  <Splide :options="options" aria-label="My Favorite Images" class="z-0">
-      <SplideSlide v-for="slide in slides" :key="slide.id">
-          <img :src="slide.image" alt="Sample 2">
+  <Splide v-if="mainSlides.length !== 0" :options="options" aria-label="My Favorite Images" class="z-0">
+      <SplideSlide v-for="slide in mainSlides" :key="slide.id">
+          <img :src="`https://ik.imagekit.io/k4cixy45r/nric/slides/`+slide.image" alt="Sample 2">
       </SplideSlide>
   </Splide>
 
@@ -19,7 +19,7 @@
       <article class="w-full auto bg-white shadow-lg flex-col gap-4" v-for="post in blogPosts" :key="post.id">
         <figure class="w-full h-auto">
             <router-link :to="'/blog_post/'+ post.id">
-                <img :src="post.image"
+                <img :src="`https://ik.imagekit.io/k4cixy45r/nric/blogs/`+post.image"
                 alt="image address" class="w-full" loading="lazy">
             </router-link>
         </figure>
@@ -69,19 +69,28 @@ export default {
     About,
     Count
   },
-
   data(){
     return{
       blogPosts:[],
-      slides:[]
+      mainSlides:[]
     };
   },
-  async mounted(){
-    let result = await axios.get("https://nric-app.herokuapp.com/api/latest_posts");
-    this.blogPosts = result.data;
-
-    let slide = await axios.get("https://nric-app.herokuapp.com/api/slides");
-    this.slides = slide.data;
+  methods: {
+    async getSlides(){
+      await axios.get("http://localhost:8000/api/slides").then((value) => {
+          this.mainSlides = value.data;
+      },function(error) { console.log(error) });
+    },
+    async getBlogPosts(){
+      await axios.get("http://localhost:8000/api/latest_posts").then((value) => {
+        this.blogPosts = value.data;
+      },function(error) { console.log(error) });
+    }
+  },
+  async mounted() {
+    await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+    await this.getSlides();
+    await this.getBlogPosts();
   },
   
 
@@ -100,9 +109,5 @@ export default {
 
     return { images, options };
   },
-
-
-  
-
 }
 </script>

@@ -8,7 +8,7 @@
         <h1 class="text-5xl font-bold mb-3">Contact Us</h1>
         <p class="text-lg text-gray-400 mb-14">Got anything to on your mind? reach out through this form</p>
 
-        <div class="w-full flex flex-col md:flex-row justify-center items-start gap-10 shadow-2xl p-2 rounded-2xl">
+        <div class="w-full flex flex-col md:flex-row justify-center items-start gap-10 shadow-2xl p-2 md:p-6 md:rounded-2xl">
 
             <div class="w-full md:w-1/2 text-left p-8 bg-green-500 text-white rounded-3xl">
 
@@ -18,20 +18,19 @@
                 </p>
 
                 <address class="w-full not-italic">
-                <div class="max-w-[50%] h-1 mb-4 bg-blue-800"></div>
-                <p>
+                    <div class="max-w-[50%] h-1 mb-4 bg-blue-800"></div>
+                    <p>
                         NAHJURRASHAD ISLAMIC COLLEGE <br>
                         Affiliated to Darul Huda Islamic University, Chemmad <br>
                         M  ullabad, Chamakkala-PO, Chenthrappinni <br>
                         Thrissur-Kerala, India-680687
                     </p>
-                    <br>
-
-                    <i class="bx bxs-phone flex-shrink-0 text-xl text-blue-800 mt-2"></i>
+                        
+                    <i class="bx bxs-phone flex-shrink-0 text-xl text-blue-800 mt-4"></i>
                     <p>Tel: 0480 2837745</p>
                     <p>Ph: 9846902564</p>
-                    <br>
-                    <i class="bx bxl-gmail flex-shrink-0 text-xl text-blue-800 mt-2"></i>
+
+                    <i class="bx bxl-gmail flex-shrink-0 text-xl text-blue-800 mt-4"></i>
                     <p>Nahjurrashad@gmail.com</p>
                 </address>
             </div>
@@ -61,25 +60,17 @@
                     <span class="input-errors" v-for="(error, index) of v$.messages.message.$errors" :key="index">
                         <span class="text-sm text-red-600">{{ error.$message }}</span>
                     </span>
-                    <!-- v-on:click="submitMessage" -->
                     
+                    <template v-if="successMsg == true">
+                        <div class="w-full p-4 mt-4 bg-green-100 rounded-lg" role="alert">
+                            <p class="text-sm text-left text-green-700"><span class="font-medium">Success!</span> Your Message Send Successfully!</p>
+                        </div>
+                    </template>
+
                     <button type="submit"  class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3">Send Message</button>
-
-                    
                 </form>
-                
-                <template v-if="successMsg">
-                    <div class="max-w-md mt-6 p-4 bg-green-500 text-white">
-                        {{ successMsg }}
-                    </div>
-                </template>
-
             </div>
-
-            
-
         </div>
-
     </div>
 
 </section>
@@ -97,7 +88,7 @@ export default {
   name: "Contact",
   components: {},
   setup () {
-    return { v$: useValidate(), successMsg: '' }
+    return { v$: useValidate(), successMsg: false }
   },
   data(){
     return {
@@ -112,23 +103,39 @@ export default {
   validations() {
     return {
         messages: {
-            name: {required},
-            email: {required, email},
-            message: {required}
+            name: {required, $lazy: true},
+            email: {required, email, $lazy: true},
+            message: {required, $lazy: true}
         }
     }
   },
   methods:{
-    async submitMessage(){
+      showMsg(){
+        this.successMsg = "Your Message Send Successfully!"
+        setTimeout(() => {
+            this.successMsg = null
+            console.log("time out")
+        }, 2000)
+    },
+    submitMessage: async function(event){
         this.v$.$validate()
         if (!this.v$.$error) {
-            await axios.post('https://nric-app.herokuapp.com/api/store/contact', {
+            this.successMsg = true;
+            await axios.post('http://localhost:8000/api/store/contact', {
                 name:this.messages.name,
                 email:this.messages.email,
                 message:this.messages.message
-            });
+            }).then(() => {
+                event.target.reset();
+                setTimeout(()=>
+                    this.successMsg = false
+                , 5000)
+            },function(error) { console.log(error) });
         }
     }
-  }
+  },
+  async mounted() {
+    await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+  },
 };
 </script>
