@@ -10,7 +10,7 @@
             </div>
             <div class="w-24 h-24 flex flex-col items-center justify-center">
                 <div class="flex items-center justify-center">
-                    <p class="text-3xl font-bold lg:text-4xl">60+</p>
+                    <p class="text-3xl font-bold lg:text-4xl">80+</p>
                 </div>
                 <p>Alumnus</p>
             </div>
