@@ -41,7 +41,7 @@
                     <h2 class="text-2xl font-bold">Visiting Time</h2>
 
                     <p class="mt-3">Daily</p>
-                    <p class="">05:00 PM - 06:30 PM</p>
+                    <p class="">04:30 PM - 06:30 PM</p>
                 </div>
 
 
