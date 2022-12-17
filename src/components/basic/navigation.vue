@@ -3,10 +3,10 @@
         
         <!-- Header -->
         <header class="w-full shadow-md">
-            <div class="container mx-auto px-[5%] py-2 flex justify-between items-center">
+            <div class="container mx-auto px-[5%] py-3 flex justify-between items-center">
 
                 <div class="">
-                    <img :src="require('@/assets/Images/nric logo.webp')" alt="" class="h-10">
+                    <img :src="require('@/assets/Images/nric logo.webp')" alt="" class="h-12">
                 </div>
         
                 <!-- Navigation -->
