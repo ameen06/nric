@@ -6,7 +6,7 @@
             <div class="container mx-auto px-[5%] py-3 flex justify-between items-center">
 
                 <div class="">
-                    <img :src="require('@/assets/Images/nric logo.webp')" alt="" class="h-12">
+                    <img :src="require('@/assets/Images/nric logo.webp')" alt="" class="h-11">
                 </div>
         
                 <!-- Navigation -->
