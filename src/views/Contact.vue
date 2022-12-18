@@ -121,7 +121,7 @@ export default {
         this.v$.$validate()
         if (!this.v$.$error) {
             this.successMsg = true;
-            await axios.post('http://localhost:8000/api/store/contact', {
+            await axios.post('https://admin.nahjurrashad.com/api/store/contact', {
                 name:this.messages.name,
                 email:this.messages.email,
                 message:this.messages.message
@@ -135,7 +135,7 @@ export default {
     }
   },
   async mounted() {
-    await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+    await axios.get('https://admin.nahjurrashad.com/sanctum/csrf-cookie');
   },
 };
 </script>
