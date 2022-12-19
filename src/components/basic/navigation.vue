@@ -64,7 +64,7 @@
             <button class="float-right focus:text-red-400" x-on:click="show = !show" type="button">
                 <i class='bx bx-x text-3xl'></i>
             </button>
-            <ul class="flex flex-col gap-y-6 my-10">
+            <ul class="flex flex-col gap-y-6 my-10 transition-75">
                 <li class="lg:text-xl font-semibold hover:text-gray-700 "
                 :class="$route.name === 'Home' ? 'text-green-500' : 'text-gray-500'">
                     <a href="/">Home</a>
