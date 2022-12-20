@@ -28,8 +28,8 @@
     </div>
 
     <div class="w-full lg:max-w-md xl:max-w-lg mt-4 lg:mt-2 bg-white">
-        <div class="p-2 shadow-lg rounded-2xl">
-            <img src="https://excavo.000webhostapp.com/nric/classone.webp"
+        <div class=" shadow-lg p-2 rounded-2xl">
+            <img src="https://res.cloudinary.com/dzcqawlpe/image/upload/v1671439613/nahjurrashad/home-hero-img_lh2bxk.jpg"
             class="w-full rounded-xl" alt="Class one group pic" loading="lazy">
         </div>
     </div>
