@@ -44,19 +44,19 @@
                 <form class="flex flex-col" @submit.prevent="submitMessage">
 
                     <input type="text" placeholder="Your Name..." required v-model="messages.name"
-                    class="w-full bg-gray-100 px-2 py-1 border-b border-green-400 text-gray-800 outline-none font-light">
+                    class="w-full bg-gray-100 px-2 py-1 border-b border-green-400 text-gray-800 outline-none font-light rounded">
                     <span class="input-errors" v-for="(error, index) of v$.messages.name.$errors" :key="index">
                         <span class="text-sm text-red-600">{{ error.$message }}</span>
                     </span>
 
                     <input type="email" placeholder="Your Email..." required v-model="messages.email"
-                    class="w-full bg-gray-100 px-2 py-1 mt-4 border-b border-green-400 text-gray-800 outline-none font-light">
+                    class="w-full bg-gray-100 px-2 py-1 mt-4 border-b border-green-400 text-gray-800 outline-none font-light rounded">
                     <span class="" v-for="(error, index) of v$.messages.email.$errors" :key="index">
                         <span class="text-sm text-red-600">{{ error.$message }}</span>
                     </span>
 
                     <textarea cols="30" rows="10" placeholder="Your Message..." required v-model.trim="messages.message"
-                    class="w-full bg-gray-100 px-2 py-1 mt-4 border bder-yellgreen 4ext-gray-800 outline-none font-light"></textarea>
+                    class="w-full bg-gray-100 px-2 py-1 mt-4 border bder-yellgreen 4ext-gray-800 outline-none font-light rounded"></textarea>
                     <span class="input-errors" v-for="(error, index) of v$.messages.message.$errors" :key="index">
                         <span class="text-sm text-red-600">{{ error.$message }}</span>
                     </span>
@@ -67,7 +67,7 @@
                         </div>
                     </template>
 
-                    <button type="submit"  class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3">Send Message</button>
+                    <button type="submit"  class="w-[fit-content] px-4 bg-gray-800 text-gray-100 outline-none py-2 mt-3 rounded">Send Message</button>
                 </form>
             </div>
         </div>
