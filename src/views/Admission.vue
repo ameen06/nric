@@ -16,7 +16,7 @@
         </p>
 
         <button class="w-[fit-content] px-4 py-2 bg-red-500 text-gray-100 outline-none rounded-md mt-3">
-            <a href="http://portal.dhiu.in/PreAdmission/Application/Create">
+            <a href="http://portal.dhiu.in/PreAdmission/Application/Create" target="_blank">
                 Apply Now
             </a>
         </button>
